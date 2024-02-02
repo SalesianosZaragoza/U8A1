@@ -8,18 +8,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import lankydan.tutorial.springboot.dto.PersonDTO;
 
 @JsonTest
-@RunWith(SpringRunner.class)
 public class PersonDTOJsonTest {
 
   @Autowired private JacksonTester<PersonDTO> json;
@@ -56,8 +53,8 @@ public class PersonDTOJsonTest {
     }
   }
 
-  @Before
-  public void setup() throws ParseException {
+	@BeforeEach
+	public void setup() throws ParseException {
     personDTO = new PersonDTO(FIRST_NAME, SECOND_NAME, DATE_OF_BIRTH, PROFESSION, SALARY);
   }
 
